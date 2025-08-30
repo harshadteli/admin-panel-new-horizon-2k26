@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>New Horizon 2k26 | Admin Dashboard</title>
   <link rel="shortcut icon" href="../IMAGES/logo.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="../CSS/chatbot.css">
   <style>
     body {
       margin: 0;
@@ -123,6 +124,18 @@
 </head>
 <body>
   <header>
+    <!-- For AI Chatbot Integration -->
+<button class="ai-guide-btn" onclick="toggleGuide();">&#128172;</button>
+<!-- Guide Panel -->
+  <div class="ai-guide-panel" id="aiGuidePanel">
+    <div class="ai-guide-header">
+      Admin Assistent
+      <button class="ai-close-btn" onclick="closeGuide()">✖</button>
+    </div>
+    <div class="ai-guide-commands" id="aiCommands"></div>
+    <div class="ai-guide-chat" id="aiChat"></div>
+  </div>
+
     <div class="admin-info">
       <h1 id="adminName">Welcome Admin</h1>
       <p>New Horizon 2k26 Admin Panel</p>
@@ -189,5 +202,6 @@
 }
   </script>
   <script src="../Js/hide.js"></script>
+  <script src="../JS/chatbot.js"></script>
 </body>
 </html>
