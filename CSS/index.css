@@ -1,0 +1,90 @@
+ body {
+      margin: 0;
+      font-family: "Courier New", monospace;
+      background: black;
+      color: #00ff00;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: rgba(0, 0, 0, 0.85);
+      border: 2px solid #00ff00;
+      padding: 25px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 15px #00ff00;
+      text-align: center;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { box-shadow: 0 0 10px #00ff00; }
+      to { box-shadow: 0 0 20px #00ff00; }
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 2px solid #00ff00;
+      border-radius: 5px;
+      background: black;
+      color: #00ff00;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #00ff00;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background: black;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+    }
+
+    /* Popup message */
+    .popup {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .popup.success {
+      background: #003300;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+    }
+
+    .popup.error {
+      background: #330000;
+      color: #ff0000;
+      border: 2px solid #ff0000;
+    }
