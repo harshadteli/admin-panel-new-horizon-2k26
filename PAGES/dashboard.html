@@ -1,210 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Horizon 2k26 | Admin Dashboard</title>
-  <link rel="shortcut icon" href="../IMAGES/logo.jpeg" type="image/x-icon">
-  <link rel="stylesheet" href="../CSS/chatbot.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f6fa;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      min-height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Horizon 2k26 | Admin Dashboard</title>
+    <link rel="shortcut icon" href="../IMAGES/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/chatbot.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-    header {
-      width: 100%;
-      max-width: 1100px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
+        header {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
 
-    .admin-info {
-      text-align: left;
-    }
+        .admin-info {
+            text-align: left;
+        }
 
-    .admin-info h1 {
-      margin: 5px 0;
-      color: #2c3e50;
-      font-size: 24px;
-    }
+        .admin-info h1 {
+            margin: 5px 0;
+            color: #2c3e50;
+            font-size: 24px;
+        }
 
-    .admin-info p {
-      margin: 0;
-      font-size: 16px;
-      color: #555;
-    }
+        .admin-info p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+        }
 
-    .logout-btn {
-      background: #e74c3c;
-      border: none;
-      color: white;
-      padding: 10px 18px;
-      font-size: 15px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+        .logout-btn {
+            background: #e74c3c;
+            border: none;
+            color: white;
+            padding: 10px 18px;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .logout-btn:hover {
-      background: #c0392b;
-    }
+        .logout-btn:hover {
+            background: #c0392b;
+        }
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      width: 100%;
-      max-width: 1000px;
-    }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
 
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-    .card h2 {
-      margin-bottom: 15px;
-      color: #2980b9;
-    }
+        .card h2 {
+            margin-bottom: 15px;
+            color: #2980b9;
+        }
 
-    .card button {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      background: #2980b9;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+        .card button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #2980b9;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .card button:hover {
-      background: #1f5f8c;
-    }
+        .card button:hover {
+            background: #1f5f8c;
+        }
 
-    footer {
-      margin-top: auto;
-      color: #666;
-      font-size: 14px;
-      padding: 15px;
-    }
+        footer {
+            margin-top: auto;
+            color: #666;
+            font-size: 14px;
+            padding: 15px;
+        }
 
-    @media (max-width: 600px) {
-      .admin-info h1 {
-        font-size: 20px;
-      }
-      .admin-info p {
-        font-size: 14px;
-      }
-      .logout-btn {
-        margin-top: 10px;
-        width: 100%;
-      }
-    }
-  </style>
+        @media (max-width: 600px) {
+            .admin-info h1 {
+                font-size: 20px;
+            }
+            .admin-info p {
+                font-size: 14px;
+            }
+            .logout-btn {
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <!-- For AI Chatbot Integration -->
-<button class="ai-guide-btn" onclick="toggleGuide();">&#128172;</button>
-<!-- Guide Panel -->
-  <div class="ai-guide-panel" id="aiGuidePanel">
-    <div class="ai-guide-header">
-      Admin Assistent
-      <button class="ai-close-btn" onclick="closeGuide()">✖</button>
+    <header>
+        <button class="ai-guide-btn" onclick="toggleGuide();">&#128172;</button>
+        <div class="ai-guide-panel" id="aiGuidePanel">
+            <div class="ai-guide-header">
+                Admin Assistent
+                <button class="ai-close-btn" onclick="closeGuide()">✖</button>
+            </div>
+            <div class="ai-guide-commands" id="aiCommands"></div>
+            <div class="ai-guide-chat" id="aiChat"></div>
+        </div>
+
+        <div class="admin-info">
+            <h1 id="adminName">Welcome Admin</h1>
+            <p>New Horizon 2k26 Admin Panel</p>
+        </div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Poster</h2>
+            <button onclick="redirectToSheet('poster')">View Data</button>
+        </div>
+
+        <div class="card">
+            <h2>Paper</h2>
+            <button onclick="redirectToSheet('paper')">View Data</button>
+        </div>
+
+        <div class="card">
+            <h2>Programming</h2>
+            <button onclick="redirectToSheet('programming')">View Data</button>
+        </div>
+        <div class="card">
+            <h2>Payment-Info</h2>
+            <button onclick="redirectToSheet('payment')">View Data</button>
+        </div>
     </div>
-    <div class="ai-guide-commands" id="aiCommands"></div>
-    <div class="ai-guide-chat" id="aiChat"></div>
-  </div>
 
-    <div class="admin-info">
-      <h1 id="adminName">Welcome Admin</h1>
-      <p>New Horizon 2k26 Admin Panel</p>
-    </div>
-    <button class="logout-btn" onclick="logout()">Logout</button>
-  </header>
+    <footer>
+        &copy; 2026 New Horizon | Admin Panel
+    </footer>
 
-  <div class="container">
-    <!-- Poster Model -->
-    <div class="card">
-      <h2>Poster</h2>
-      <button onclick="redirectToSheet('poster')">View Data</button>
-    </div>
+    <audio id="poster_audio" src="./AI-VOICE-RESPONSE-SYSTEM/poster.mp3" preload="auto"></audio>
+    <audio id="paper_audio" src="./AI-VOICE-RESPONSE-SYSTEM/paper.mp3" preload="auto"></audio>
+    <audio id="programming_audio" src="./AI-VOICE-RESPONSE-SYSTEM/program.mp3" preload="auto"></audio>
+    <audio id="payment_audio" src="./AI-VOICE-RESPONSE-SYSTEM/payment.mp3" preload="auto"></audio>
 
-    <!-- Paper Model -->
-    <div class="card">
-      <h2>Paper</h2>
-      <button onclick="redirectToSheet('paper')">View Data</button>
-    </div>
+    <script>
+      
+        function redirectToSheet(model) {
+            let urls = {
+                poster: "../DATABASE-NEW-TABLE-FORMAT/POSTERDATA/posterdata.html",
+                paper: "./DATABASE-NEW-TABLE-FORMAT/PAPERDATA/paperdata.html",
+                programming: "../DATABASE-NEW-TABLE-FORMAT/PROGRAMMINGDATA/programingdata.html",
+                payment: "../DATABASE-NEW-TABLE-FORMAT/PAYMENTDATA/payment.html"
+            };
 
-    <!-- Programming Model -->
-    <div class="card">
-      <h2>Programming</h2>
-      <button onclick="redirectToSheet('programming')">View Data</button>
-    </div>
-    <!-- Payment Data -->
-    <div class="card">
-      <h2>Payment-Info</h2>
-      <button onclick="redirectToSheet('payment')">View Data</button>
-    </div>
-  </div>
+            let audioId = model + "_audio";
+            let audio = document.getElementById(audioId);
+            let targetUrl = urls[model];
 
-  <footer>
-    &copy; 2026 New Horizon | Admin Panel
-  </footer>
+            if (audio && targetUrl) {
+              
+                audio.onended = null; 
 
-  <script>
-    // Redirect to spreadsheet links
-    function redirectToSheet(model) {
-      let urls = {
-        poster: "../DATABASE-NEW-TABLE-FORMAT/POSTERDATA/posterdata.html",
-        paper: "../DATABASE-NEW-TABLE-FORMAT/PAPERDATA/paperdata.html",
-        programming: "../DATABASE-NEW-TABLE-FORMAT/PROGRAMMINGDATA/programingdata.html",
-        payment: "../DATABASE-NEW-TABLE-FORMAT/PAYMENTDATA/payment.html"
-      };
-      window.location.href = urls[model];
-    }
+               
+                audio.onended = function() {
+                    console.log(model + " audio finished. Redirecting to " + targetUrl);
+                    window.location.href = targetUrl;
+                };
 
-    // Logout function
-    function logout() {
-  localStorage.removeItem("adminName");
-  window.location.href = "../index.html"; // back to login page
-}
+               
+                audio.pause(); 
+                audio.currentTime = 0; 
+                
+                audio.play().catch(error => {
+                    console.error("Audio play failed, redirecting immediately:", error);
+                  
+                    window.location.href = targetUrl;
+                });
+            } else {
+               
+                if (targetUrl) {
+                     window.location.href = targetUrl;
+                }
+            }
+        }
 
-    // Get username from login redirect
-    window.onload = function() {
-  let user = localStorage.getItem("adminName");
-  if (user) {
-    document.getElementById("adminName").innerText = "Welcome " + user;
-  } else {
-    // If no username found, redirect back to login
-    window.location.href = "index.html";
-  }
-}
-  </script>
-  <script src="../Js/hide.js"></script>
-  <script src="../JS/chatbot.js"></script>
+        
+        function logout() {
+            localStorage.removeItem("adminName");
+            window.location.href = "../index.html"; 
+        }
+
+       
+        window.onload = function() {
+            let user = localStorage.getItem("adminName");
+            if (user) {
+                document.getElementById("adminName").innerText = "Welcome " + user;
+            } else {
+                
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+    <script src="../Js/hide.js"></script>
+    <script src="../JS/chatbot.js"></script>
 </body>
 </html>
-
-
-
