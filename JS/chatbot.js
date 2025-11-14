@@ -2,8 +2,8 @@
         const guideCommands = [
             { text: "👨‍💻 How to view Data", audio: "../VOICE/1.mp3", reply: "Go to Respective event and click on the view data and see the data." },
             { text: "📲 Data is updated or not", audio: "../VOICE/2.mp3", reply: "Yes, data is updated when new form is Submitted." },
-            { text: "📃 How to editing the data", audio: "../VOICE/3.mp3", reply: "When in case of any problem, Go to respective Spread-Sheet and edit it." },
-            { text: "❌ Data is not showing..?", audio: "../VOICE/4.mp3", reply: "In case of server down then data is not showing, so go to there respective Spread-Sheet for the viewing the data correctly." },
+            { text: "📃 How to editing the data", audio: "../VOICE/editing.mp3", reply: "When in case of any problem,do not update the data directly,other wise data will be lost.So please contact our department or contact the developer befor editing the data." },
+            { text: "❌ Data is not showing..?", audio: "../VOICE/dataisnot.mp3", reply: "In case of server down the data is not showing, refreshing the data or page as much as possible otherwise contact the developer.." },
             { text: "💵 About Payment Information", audio: "../VOICE/5.mp3", reply: "This contain the information about Online Payment by the participate for this event" }
            ];
 
@@ -62,4 +62,5 @@
                     tooltip.remove();
                 }, 4000);
             }
+
         });
