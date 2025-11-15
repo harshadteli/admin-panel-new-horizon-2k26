@@ -171,66 +171,40 @@
     <audio id="programming_audio" src="./AI-VOICE-RESPONSE-SYSTEM/program.mp3" preload="auto"></audio>
     <audio id="payment_audio" src="./AI-VOICE-RESPONSE-SYSTEM/payment.mp3" preload="auto"></audio>
 
-    <script>
-      
-        function redirectToSheet(model) {
-            let urls = {
-                poster: "../DATABASE-NEW-TABLE-FORMAT/POSTERDATA/posterdata.html",
-                paper: "../DATABASE-NEW-TABLE-FORMAT/PAPERDATA/paperdata.html",
-                programming: "../DATABASE-NEW-TABLE-FORMAT/PROGRAMMINGDATA/programingdata.html",
-                payment: "../DATABASE-NEW-TABLE-FORMAT/PAYMENTDATA/payment.html"
-            };
-
-            let audioId = model + "_audio";
-            let audio = document.getElementById(audioId);
-            let targetUrl = urls[model];
-
-            if (audio && targetUrl) {
-              
-                audio.onended = null; 
-
-               
-                audio.onended = function() {
-                    console.log(model + " audio finished. Redirecting to " + targetUrl);
-                    window.location.href = targetUrl;
-                };
-
-               
-                audio.pause(); 
-                audio.currentTime = 0; 
-                
-                audio.play().catch(error => {
-                    console.error("Audio play failed, redirecting immediately:", error);
-                  
-                    window.location.href = targetUrl;
-                });
-            } else {
-               
-                if (targetUrl) {
-                     window.location.href = targetUrl;
-                }
-            }
+  
+     <script>
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            checkAdminSession();
         }
+    };
 
-        
-        function logout() {
-            localStorage.removeItem("adminName");
-            window.location.href = "../index.html"; 
+    function checkAdminSession() {
+        let user = localStorage.getItem("adminName");
+        if (user) {
+            document.getElementById("adminName").innerText = "Welcome " + user;
+        } else {
+            window.location.replace("../index.html"); 
         }
-
-       
-        window.onload = function() {
-            let user = localStorage.getItem("adminName");
-            if (user) {
-                document.getElementById("adminName").innerText = "Welcome " + user;
-            } else {
-                
-                window.location.href = "index.html";
-            }
-        }
-    </script>
+    }
+    checkAdminSession();
+    function logout() {
+        localStorage.removeItem("adminName");
+        window.location.replace("../index.html");
+    }
+    function redirectToSheet(model) {
+        let urls = {
+            poster: "../DATABASE-NEW-TABLE-FORMAT/POSTERDATA/posterdata.html",
+            paper: "../DATABASE-NEW-TABLE-FORMAT/PAPERDATA/paperdata.html",
+            programming: "../DATABASE-NEW-TABLE-FORMAT/PROGRAMMINGDATA/programingdata.html",
+            payment: "../DATABASE-NEW-TABLE-FORMAT/PAYMENTDATA/payment.html"
+        };
+        window.location.href = urls[model];
+    }
+</script>
     <script src="../Js/hide.js"></script>
     <script src="../JS/chatbot.js"></script>
 </body>
 </html>
+
 
